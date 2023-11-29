@@ -6,17 +6,34 @@ body {
   overflow-y: auto;
 }
 
+.filters-parent {
+  margin-bottom: 24px;
+}
+
+.filters,
+.filters-parent {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.list-title {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+}
+
 .list-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: center;
+  align-items: baseline;
   gap: 40px;
   height: 100svh;
 }
 
 .event-card {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 2fr;
   gap: 20px;
   padding: 20px;
   box-shadow: 0px 0px 1px 0px #091e424f;
@@ -102,6 +119,10 @@ body {
 }
 
 @media (max-width: 639px) {
+  body {
+    padding: 20px;
+  }
+
   .modal-card {
     min-width: unset;
     max-width: unset;
@@ -112,6 +133,16 @@ body {
   .modal-content,
   .list-container,
   .event-card {
+    gap: 20px;
     grid-template-columns: unset;
+  }
+
+  .modal-content,
+  .event-card {
+    gap: 16px;
+  }
+
+  .filters-parent {
+    display: grid;
   }
 }
